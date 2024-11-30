@@ -1,5 +1,11 @@
 import "./App.css";
 
+function Button(props) {
+  // Todo 1: ใช้ Prop "buttonText" เพื่อแสดงข้อความบนปุ่ม
+  // Todo 4: ใช้ Prop "buttonStyle" เพื่อเปลี่ยน className ของปุ่ม
+  return <button className={props.buttonStyle}>{props.buttonText}</button>;
+}
+
 function Header() {
   return (
     <header>
@@ -51,7 +57,8 @@ function MainContent() {
           to collaborate with you to tackle your most complex challenges and
           drive your success.
         </p>
-        <Button />
+        {/* Todo 2: Render Button "Learn More" พร้อม Prop buttonText และ buttonStyle */}
+        <Button buttonText="Learn More" buttonStyle="learn-button" />
       </div>
     </main>
   );
@@ -70,7 +77,8 @@ function ProductSection() {
             />
             <h3>Premium Bluetooth Headphones</h3>
             <p className="product-price">2,400 Baht</p>
-            <Button />
+            {/* Todo 3, Todo 6: Render Button "Add to Cart" พร้อม Prop buttonStyle */}
+            <Button buttonText="Add to Cart-1" buttonStyle="add-to-cart-button" />
           </div>
           <div className="product-card">
             <img
@@ -79,7 +87,8 @@ function ProductSection() {
             />
             <h3>Classic Leather Watch</h3>
             <p className="product-price">4,000 Baht</p>
-            <Button />
+            {/* Todo 3, Todo 6: Render Button "Add to Cart" พร้อม Prop buttonStyle */}
+            <Button buttonText="Add to Cart-2" buttonStyle="add-to-cart-button" />
           </div>
           <div className="product-card">
             <img
@@ -88,7 +97,11 @@ function ProductSection() {
             />
             <h3>Organic Green Tea</h3>
             <p className="product-price">79.99 Baht</p>
-            <Button />
+            {/* Todo 3, Todo 7: Render Button "Add to Cart" พร้อม Prop buttonStyle */}
+            <Button
+              buttonText="Add to Cart-3"
+              buttonStyle="add-to-cart-button-secondary"
+            />
           </div>
         </div>
       </div>
@@ -102,10 +115,6 @@ function Footer() {
       <p>&copy; 2023 Your Ecommerce Store. All rights reserved.</p>
     </footer>
   );
-}
-
-function Button() {
-  return <button className="add-to-cart-button">Add to Cart</button>;
 }
 
 function App() {
